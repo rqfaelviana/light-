@@ -1,0 +1,407 @@
+/* =========
+   Paleta Frevo (fundo branco)
+   ========= */
+:root {
+  --bg: #ffffff;
+  --text: #111111;
+  --muted: #5f6368;
+  --border: #e9eaee;
+  --shadow: 0 6px 20px rgba(17, 17, 17, .06);
+
+  /* Cores da sombrinha */
+  --frevo-red:   #e6241c;
+  --frevo-yellow:#ffd21a;
+  --frevo-blue:  #1657d9;
+  --frevo-green: #1e8b3b;
+  
+  --cinza: 6f6f6f;
+  
+  /* Utilidades */
+  --radius: 14px;
+  --surface: #ffffff;
+  --surface-2: #fafbff;
+  --primary: var(--frevo-yellow);
+
+  /* Altura do cabeçalho fixo */
+  --header-h: 64px;
+
+  /* Largura do ícone do logo (sombrinha) */
+  --brand-w: 40px;
+}
+
+html { scroll-behavior: smooth; }
+/* evita que o título fique escondido sob o header fixo ao navegar por âncora */
+[id] { scroll-margin-top: calc(var(--header-h) + 8px); }
+
+/* Reset básico */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Arial;
+  color: var(--text);
+  background: var(--bg);
+  /* empurra o conteúdo para não ficar sob o header fixo */
+  padding-top: var(--header-h);
+}
+
+/* ===== Layout ===== */
+.container { width: min(1100px, 92vw); margin: 0 auto; }
+
+/* ===== Header fixo ===== */
+header{
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 1px 0 rgba(17,17,17,.03);
+}
+
+/* FAIXA multicolorida ocupando a LARGURA TOTAL DA PÁGINA */
+header::after{
+  content:"";
+  position: absolute;
+  left: 0; right: 0; bottom: -1px; height: 4px;
+  background: linear-gradient(90deg,
+    var(--frevo-red) 0 25%,
+    var(--frevo-yellow) 25% 50%,
+    var(--frevo-blue) 50% 75%,
+    var(--frevo-green) 75% 100%);
+}
+
+/* ===== Barra do topo FULL-BLEED (100vw) =====
+   Transformamos a barra em GRID com 3 colunas:
+   [logo | centro (links) | ghost do tamanho do logo]  */
+.container.nav{
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding: 0 16px;
+  display: grid;
+  grid-template-columns: var(--brand-w) 1fr var(--brand-w);
+  align-items: center;
+  min-height: var(--header-h);
+  position: relative;
+}
+
+/* Espaçador invisível que espelha a largura da sombrinha no lado direito */
+.container.nav::after{
+  content: "";
+  grid-column: 3;
+  justify-self: end;
+  width: var(--brand-w);
+  height: 1px;             /* invisível; só equilibra o layout */
+}
+
+/* ===== Itens do topo ===== */
+.nav{ display: contents; }  /* deixa os filhos participarem do grid */
+
+/* Sombrinha fixa no canto ESQUERDO */
+.brand{
+  grid-column: 1;
+  justify-self: start;
+  display: inline-flex;
+  align-items: center;
+}
+.brand-logo{
+  width: var(--brand-w); height: var(--brand-w);
+  object-fit: contain; display: block;
+  filter: drop-shadow(0 1px 0 rgba(0,0,0,.08));
+}
+
+/* MENU centralizado geometricamente na coluna central do GRID */
+nav{
+  grid-column: 2;
+  justify-self: center;     /* centro verdadeiro da página */
+  width: max-content;
+}
+nav ul{
+  display: flex;
+  flex-wrap: nowrap;        /* impede quebra */
+  white-space: nowrap;      /* uma única linha */
+  gap: 22px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Links */
+nav a {
+  --link-ink: var(--text);
+  color: var(--link-ink);
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: .95rem;
+  border: 1px solid transparent;
+  transition: transform .15s ease, background-color .15s ease, border-color .15s ease;
+}
+nav li:nth-child(4n+1) a{ --link-ink: var(--frevo-red); }
+nav li:nth-child(4n+2) a{ --link-ink: var(--frevo-yellow); }
+nav li:nth-child(4n+3) a{ --link-ink: var(--frevo-blue); }
+nav li:nth-child(4n+4) a{ --link-ink: var(--frevo-green); }
+nav a:hover,
+nav a:focus-visible{
+  background: color-mix(in srgb, var(--link-ink) 8%, #fff);
+  border-color: color-mix(in srgb, var(--link-ink) 35%, #fff);
+  outline: none;
+  transform: translateY(-1px);
+}
+
+/* ===== Hero ===== */
+.hero { padding: 56px 0 28px; }
+.hero h1 { font-size: clamp(1.8rem, 1rem + 3vw, 3rem); margin: 8px 0 10px; }
+.hero p.lead{ color: var(--muted); max-width: 62ch; margin: 0; }
+.tag{
+  display: inline-block; font-size: .85rem; color: var(--muted);
+  padding: 6px 10px; border-radius: 999px; background: var(--surface-2);
+  border: 1px solid var(--border);
+}
+
+/* ===== Seções ===== */
+section { padding: 40px 0; border-top: 1px solid var(--border); }
+section:first-of-type{ border-top: 0; }
+section h2 { font-size: clamp(1.2rem, .9rem + 1.2vw, 1.6rem); letter-spacing: .2px; margin-top: 0; }
+
+/* Grids */
+.grid{ display: grid; gap: 16px; }
+.grid-2{ grid-template-columns: 1fr; }
+.grid-3{ grid-template-columns: 1fr; }
+@media (min-width: 800px){
+  .grid-2{ grid-template-columns: 0.70fr 1.30fr; }
+  .grid-3{ grid-template-columns: 1fr 1fr; }
+}
+
+/* Cartões com borda multicolorida suave */
+.card{
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 18px;
+  position: relative;
+}
+.card::before{
+  content:"";
+  position: absolute; inset: -1px; border-radius: calc(var(--radius) + 1px);
+  padding: 1px;
+  background:
+    linear-gradient(90deg,
+      var(--frevo-red), var(--frevo-yellow), var(--frevo-blue), var(--frevo-green));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor; mask-composite: exclude;
+  pointer-events: none; opacity: .15;
+}
+
+/* ===== Autores ===== */
+.authors{
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px;
+}
+.author{ display: grid; grid-template-columns: 64px 1fr; gap: 14px; align-items: center; }
+.author img{
+  width: 64px; height: 64px; border-radius: 12px; object-fit: cover; background: #f2f4f8;
+  border: 2px solid var(--border);
+  box-shadow: 0 0 0 3px rgba(22,87,217,.08);
+}
+.author .name{ font-weight: 700; }
+.links{ display: flex; gap: 8px; margin-top: 6px; }
+.chip{
+  font-size: .85rem; text-decoration: none; color: var(--text);
+  padding: 6px 10px; border-radius: 999px; border: 1px solid var(--border);
+  transition: background-color .15s ease, transform .15s ease, border-color .15s ease;
+}
+.chip:hover{ transform: translateY(-1px); }
+.links .chip:nth-child(1){ border-color: color-mix(in srgb, var(--frevo-blue) 40%, #ddd); }
+.links .chip:nth-child(2){ border-color: color-mix(in srgb, var(--frevo-green) 40%, #ddd); }
+
+/* ===== Tabela ===== */
+.table-wrap{ overflow-x: auto; border-radius: 12px; border: 1px solid var(--border); background: var(--surface); }
+table{ width: 100%; border-collapse: collapse; }
+th, td{ padding: 12px 14px; border-bottom: 1px solid var(--border); text-align: left; }
+th{
+  background: linear-gradient(90deg,
+    color-mix(in srgb, var(--frevo-red) 12%, #fff),
+    color-mix(in srgb, var(--frevo-yellow) 12%, #fff),
+    color-mix(in srgb, var(--frevo-blue) 12%, #fff),
+    color-mix(in srgb, var(--frevo-green) 12%, #fff));
+  color: #202124; font-weight: 700;
+}
+tbody tr:nth-child(odd){ background: #fbfcff; }
+tbody tr:hover{ background: #f6f8fe; }
+
+/* ===== Passo a passo ===== */
+.steps{ display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+.step img{
+  width: 100%; height: 160px; object-fit: cover; border-radius: 12px;
+  border: 2px solid #fff; box-shadow: var(--shadow);
+  outline: 2px solid color-mix(in srgb, var(--frevo-blue) 40%, #ddd);
+}
+.step h3{ margin: 10px 0 6px; font-size: 1rem; }
+.step p{ color: var(--muted); font-size: .95rem; }
+
+/* ===== Código ===== */
+pre{
+  background: #0f1221;
+  color: #e8ecff;
+  border-radius: 12px; padding: 16px; overflow: auto;
+  border: 1px solid #0c1020;
+  box-shadow: 0 10px 30px rgba(22, 87, 217, .12);
+}
+code{ font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; font-size: .95rem; }
+code .c-white { color: #fff; }
+code .c-green { color: var(--frevo-green); }  /* #1e8b3b */
+
+/* ===== Botões ===== */
+.actions{ display: flex; flex-wrap: wrap; gap: 12px; }
+.btn{
+  display: inline-flex; align-items: center; gap: 10px; 
+  padding: 10px 16px; border-radius: 12px; text-decoration: none;
+  font-weight: 800; letter-spacing: .2px;
+  color: #111;
+  background: var(--primary);
+  border: 2px solid #11111110;
+  box-shadow: 0 6px 18px rgba(255, 210, 26, .35);
+  transition: transform .15s ease, box-shadow .15s ease, filter .15s ease;
+}
+.btn:hover{ transform: translateY(-1px); filter: saturate(1.05); }
+.btn.secondary{
+  background:
+    linear-gradient(#fff, #fff) padding-box, /* cor interna */
+    linear-gradient(90deg,
+      var(--frevo-red),
+      var(--frevo-yellow),
+      var(--frevo-blue),
+      var(--frevo-green)
+    ) border-box;           
+  border: 2px solid transparent;
+  border-image: linear-gradient(90deg, var(--frevo-red), var(--frevo-yellow), var(--frevo-blue), var(--frevo-green)) 1;
+  box-shadow: 0 6px 18px rgba(17,17,17,.06);
+  padding: 10px 16px;
+  border-radius: 12px;
+  border:2px solid transparent;
+}
+
+/* ===== Vídeo ===== */
+.video{ position: relative; padding-top: 56.25%; border-radius: 16px; overflow: hidden; border: 2px solid var(--border); background: #f2f4ff; }
+.video::before{
+  content:""; position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(1200px 300px at 0% 0%,
+    color-mix(in srgb, var(--frevo-red) 6%, transparent),
+    transparent 60%),
+  radial-gradient(1200px 300px at 100% 100%,
+    color-mix(in srgb, var(--frevo-yellow) 6%, transparent),
+    transparent 60%);
+}
+.video iframe{ position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+/* ===== Palavras-chave ===== */
+.badges{ 
+  display:flex; 
+  gap:8px; 
+  flex-wrap:wrap; 
+}
+
+.badge{
+  padding:6px 10px;
+  border-radius:999px;
+  border:2px solid transparent;            /* cria a área do “borda” */
+  background:
+    linear-gradient(#fff, #fff) padding-box, /* cor interna */
+    linear-gradient(90deg,
+      var(--frevo-red),
+      var(--frevo-yellow),
+      var(--frevo-blue),
+      var(--frevo-green)
+    ) border-box;                            /* borda em gradiente */
+}
+
+/* ===== Footer ===== */
+footer{
+  padding: 36px 0 56px; color: var(--muted); font-size: .95rem;
+  border-top: 1px solid var(--border); background: #fff;
+}
+
+footer .container{
+  display: flex;                   /* centraliza blocos internos */
+  flex-direction: column;
+  align-items: center;             /* alinha horizontalmente */
+  gap: 8px;
+}
+
+/* ===== Acessibilidade/foco ===== */
+:focus-visible{
+  outline: 3px solid color-mix(in srgb, var(--frevo-blue) 55%, #fff);
+  outline-offset: 2px;
+}
+
+/* ===== Pequenas melhorias responsivas ===== */
+@media (max-width: 900px){
+  nav ul{ gap: 14px; }
+}
+@media (max-width: 520px){
+  :root{ --brand-w: 34px; }
+  nav a{ padding: 6px 10px; }
+}
+
+/* Hero com posicionamento relativo para ancorar a imagem */
+.hero .container{
+  position: relative;
+  /* reserva espaço à direita para a imagem não sobrepor o texto */
+  padding-right: clamp(240px, 30vw, 440px);
+}
+
+/* Imagem grande no topo direito, como no desenho */
+.hero-umbrella{
+  position: absolute;
+  top: 12px;                                /* distância do topo do hero */
+  right: clamp(8px, 6vw, 64px);             /* encosta à direita de forma responsiva */
+
+  /* tamanho grande, similar ao que você desenhou */
+  width: clamp(260px, 28vw, 420px);
+  height: auto;
+
+  object-fit: contain;
+  pointer-events: none;                      /* não pega cliques */
+  user-select: none;
+  filter: drop-shadow(0 6px 18px rgba(0,0,0,.12));
+}
+
+/* Em telas menores, reduz ou oculta para não poluir a leitura */
+@media (max-width: 900px){
+  .hero .container{ padding-right: 0; }
+  .hero-umbrella{ position: static; display: block; margin: 18px auto 0; width: 220px; }
+}
+@media (max-width: 520px){
+  .hero-umbrella{ width: 180px; }
+}
+
+/* Hero com posicionamento relativo para ancorar a imagem */
+.hero .container{
+  position: relative;
+  /* reserva espaço à direita para a imagem não sobrepor o texto */
+  padding-right: clamp(0px, 20vw, 0px);
+}
+
+/* Imagem grande no topo direito */
+.hero-umbrella{
+  position: absolute;
+  top: 90px;                                /* distância do topo do hero */
+  right: clamp(8px, 80vw, 300px);             /* encosta à direita de forma responsiva */
+
+  /* Tamanho */
+  width: clamp(180px, 28vw, 340px);
+  height: auto;
+
+  object-fit: contain;
+  pointer-events: none;                      /* não pega cliques */
+  user-select: none;
+  filter: drop-shadow(0 6px 18px rgba(0,0,0,.12));
+}
+
+/* Em telas menores, reduz ou oculta para não poluir a leitura */
+@media (max-width: 900px){
+  .hero .container{ padding-right: 0; }
+  .hero-umbrella{ position: static; display: block; margin: 18px auto 0; width: 220px; }
+}
+@media (max-width: 520px){
+  .hero-umbrella{ width: 180px; }
+}
