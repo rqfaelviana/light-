@@ -1,13 +1,386 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <!--escrever o codigo sempre acima dessa tag script-->
-    <script src="index.js"></script>
-  </body>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Frevo Play</title>
+  <meta name="description" content="Site para documentar o projeto acadêmico 'Frevo Play'." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- TOPO / NAVEGAÇÃO -->
+    <div id="topo" aria-hidden="true"></div>
+  <header>
+  <div class="container nav">
+    <a class="brand" href="#topo" aria-label="Voltar ao topo">
+      <img src="assets/img/sombrinha-logo.png" class="brand-logo" alt="Logo do projeto: Frevo Play" width="40" height="40" />
+    </a>
+      <nav aria-label="Seções do site">
+        <ul>
+          <li><a href="#descricao">Descrição</a></li>
+          <li><a href="#keywords">Palavras‑chave</a></li>
+          <li><a href="#autores">Autores</a></li>
+          <li><a href="#componentes">Componentes</a></li>
+          <li><a href="#apps">Apps & Plataforma</a></li>
+          <li><a href="#passos">Passo a passo</a></li>
+          <li><a href="#codigo">Código</a></li>
+          <li><a href="#download">Download</a></li>
+          <li><a href="#video">Vídeo</a></li>
+          <li><a href="#licoes">Lições</a></li>
+        </ul>
+      </nav>
+    </div>
+</div>
+  </header>
+
+  <!-- HERO -->
+<div class="hero">
+  <div class="container">
+    <h1>Frevo Play</h1>   <!-- NOME DO PROJETO -->
+    <p class="lead">
+      Documentação do protótipo físico-digital que reproduz o jogo de memorização com luzes e sons em uma
+      sombrinha de frevo (~45 × 45 cm). Esta página segue os requisitos de HTML & CSS da disciplina de
+      Introdução à Computação.
+    </p>
+    <div class="actions" style="margin-top:14px">
+      <a class="btn" href="#download">Baixar .zip do projeto</a>
+      <a class="btn secondary" href="#codigo">Ver trechos de código</a>
+    </div>
+  </div>
+</div>
+
+<main>
+
+  <section id="descricao">
+    <div class="container grid grid-2">
+      
+      <!-- Informações (preenchido) -->
+      <div class="card">
+        <h2>Informações</h2>
+        <strong>Nome do projeto: </strong>Frevo Play<br>
+        <strong>Disciplina: </strong>Sistemas Digitais<br>
+        <strong>Semestre: </strong>2025.2<br>
+        <strong>Professores: </strong>Danilo e Rafael<br>
+        <strong>Curso: </strong>Sistemas de Informação<br>
+        <strong>Faculdade: </strong>Cesar School
+      </div>
+
+      <!-- Descrição do Projeto (para editar) -->
+      <div class="card">
+        <h2>Descrição do Projeto</h2>
+        <strong>Motivação: </strong>Explique por que o projeto é importante (ex.: valor cultural do frevo, aprendizagem de lógica/eletrônica, interação lúdica). [EDITAR] <br>
+        <strong>Objetivo: </strong>Defina claramente o que o protótipo deve alcançar (ex.: reproduzir sequência de LEDs/sons, registrar acertos, níveis, etc.). [EDITAR]<br>
+        <strong>Contextualização: </strong>Resuma o contexto e área de aplicação (ex.: ensino, cultura pernambucana, feiras acadêmicas). [EDITAR]
+      </div>
+    </div>
+
+    <!-- Esquema Conceitual -->
+    <div class="container" style="margin-top:16px">
+      <div class="card grid grid-2">
+        <div>
+          <h2>Esquema conceitual do artefato</h2>
+          <p><!-- TODO: Descreva os blocos do sistema, conexões entre sensores/atuadores, microcontrolador, alimentação, etc. --></p>
+          <ul>
+            <li><!-- TODO: Entradas (toque/botões/sensores capacitivos) --></li>
+            <li><!-- TODO: Processamento (Arduino/ESP32/etc.) --></li>
+            <li><!-- TODO: Saídas (LEDs RGB, buzzer/alto-falante) --></li>
+            <li><!-- TODO: Alimentação (pilhas/bateria) --></li>
+          </ul>
+        </div>
+
+        <figure>
+          <img
+            src="assets/esquema-conceitual.png"
+            alt="Esquema conceitual da sombrinha interativa"
+            style="width:100%; border-radius: 12px; border:1px solid #2a2a33; background:#0c0c10; aspect-ratio: 16/10; object-fit: cover;"
+          />
+          <figcaption style="color:var(--muted); margin-top:8px">
+            Ilustração/diagrama do sistema (substituir por imagem final).
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+    <!-- 3. PALAVRAS-CHAVE -->
+    <section id="keywords">
+      <div class="container">
+        <h2>Palavras‑chave</h2>
+        <div class="badges">
+          <!-- Substitua pelos termos do projeto -->
+          <span class="badge">Frevo</span>
+          <span class="badge">Jogo de Memória</span>
+          <span class="badge">LED RGB</span>
+          <span class="badge">Sistemas Digitais</span>
+          <span class="badge">Prototipagem</span>
+          <span class="badge">Gênius</span>
+          <span class="badge">Sombrinha</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- AUTORES -->
+    <section id="autores">
+      <div class="container">
+        <h2>Autores</h2>
+        <div class="authors">
+          <div class="card author">
+            <img src="assets/img/Isabelly.jpg" alt="Isabelly" />
+            <div>
+              <div class="name">Isabelly Ribeiro</div>
+              <div class="links">
+                <a class="chip" href="https://github.com/SEU_USUARIO" target="_blank" rel="noopener">GitHub</a>
+                <a class="chip" href="https://www.linkedin.com/in/SEU_PERFIL" target="_blank" rel="noopener">LinkedIn</a>
+              </div>
+            </div>
+          </div>
+          <div class="card author">
+            <img src="assets/img/Jean.jpg" alt="Jean" />
+            <div>
+              <div class="name">Jean Augusto</div>
+              <div class="links">
+                <a class="chip" href="https://github.com/SEU_USUARIO" target="_blank" rel="noopener">GitHub</a>
+                <a class="chip" href="https://www.linkedin.com/in/SEU_PERFIL" target="_blank" rel="noopener">LinkedIn</a>
+              </div>
+            </div>
+          </div>
+          <div class="card author">
+            <img src="assets/img/Kellwen.jpg" alt="Kellwen" />
+            <div>
+              <div class="name">Kellwen Costa</div>
+              <div class="links">
+                <a class="chip" href="https://github.com/SEU_USUARIO" target="_blank" rel="noopener">GitHub</a>
+                <a class="chip" href="https://www.linkedin.com/in/SEU_PERFIL" target="_blank" rel="noopener">LinkedIn</a>
+              </div>
+            </div>
+          </div>
+          <div class="card author">
+            <img src="assets/img/Lisa.jpg" alt="Lisa" />
+            <div>
+              <div class="name">Lisa Sales</div>
+              <div class="links">
+                <a class="chip" href="https://github.com/SEU_USUARIO" target="_blank" rel="noopener">GitHub</a>
+                <a class="chip" href="https://www.linkedin.com/in/SEU_PERFIL" target="_blank" rel="noopener">LinkedIn</a>
+              </div>
+            </div>
+          </div>
+          <div class="card author">
+            <img src="assets/img/Maria.jpg" alt="Maria" />
+            <div>
+              <div class="name">Maria Clara</div>
+              <div class="links">
+                <a class="chip" href="https://github.com/SEU_USUARIO" target="_blank" rel="noopener">GitHub</a>
+                <a class="chip" href="https://www.linkedin.com/in/SEU_PERFIL" target="_blank" rel="noopener">LinkedIn</a>
+              </div>
+            </div>
+          </div>
+          <div class="card author">
+            <img src="assets/img/Rafael.jpg" alt="Rafael" />
+            <div>
+              <div class="name">Rafael Viana</div>
+              <div class="links">
+                <a class="chip" href="https://github.com/SEU_USUARIO" target="_blank" rel="noopener">GitHub</a>
+                <a class="chip" href="https://www.linkedin.com/in/SEU_PERFIL" target="_blank" rel="noopener">LinkedIn</a>
+              </div>
+            </div>
+          </div>
+          <div class="card author">
+            <img src="assets/img/Rhayssa.jpg" alt="Rhayssa" />
+            <div>
+              <div class="name">Rhayssa Barbosa</div>
+              <div class="links">
+                <a class="chip" href="https://github.com/SEU_USUARIO" target="_blank" rel="noopener">GitHub</a>
+                <a class="chip" href="https://www.linkedin.com/in/SEU_PERFIL" target="_blank" rel="noopener">LinkedIn</a>
+              </div>
+            </div>
+          </div>
+
+              <img
+      class="hero-umbrella"
+      src="assets/img/sombrinha-logo.png"
+      alt=""
+      aria-hidden="true">
+  </div>
+    </section>
+
+    <!-- COMPONENTES E SUPRIMENTOS -->
+    <section id="componentes">
+      <div class="container">
+        <h2>Componentes e suprimentos</h2>
+        <div class="table-wrap">
+          <table aria-describedby="lista-componentes">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Componente/Suprimento</th>
+                <th>Descrição / Especificação</th>
+                <th>Código de referência</th>
+                <th>Qtd.</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Microcontrolador</td>
+                <td><!-- Ex.: Arduino UNO / ESP32 / etc. --></td>
+                <td><!-- SKU/Link/Loja --></td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>LEDs RGB endereçáveis</td>
+                <td><!-- Ex.: WS2812B, 8 segmentos, etc. --></td>
+                <td><!-- Código --></td>
+                <td>8</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Sensor/Toque</td>
+                <td><!-- Ex.: botões capacitivos / TTP223 --></td>
+                <td><!-- Código --></td>
+                <td>8</td>
+              </tr>
+              <!-- Acrescentar linhas conforme necessário -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- APLICATIVOS E PLATAFORMA -->
+    <section id="apps">
+      <div class="container grid grid-2">
+        <div class="card">
+          <h2>Aplicativos e Plataformas</h2>
+          <ul>
+            <li><strong>IDE</strong>: <!-- Arduino IDE 2.3.2, PlatformIO, etc. --></li>
+            <li><strong>Controle de versão</strong>: <!-- Git 2.x + GitHub --> </li>
+            <li><strong>Modelagem / Diagramas</strong>: <!-- Draw.io / Fritzing / KiCad --> </li>
+            <li><strong>Editor</strong>: <!-- VS Code (versão) --> </li>
+            <li><strong>Outros</strong>: <!-- Biblioteca FastLED, Tone, etc. (versões) --> </li>
+          </ul>
+        </div>
+        <aside class="card">
+          <h2>Notas de versão</h2>
+          <ul class="cinza">
+            <li>1.00: <span style="color: var(--muted)">Digite aqui informações sobre a versão</span></li>
+            <li>1.01: <span style="color: var(--muted)">Digite aqui informações sobre a versão</span></li>
+            <li>1.02: <span style="color: var(--muted)">Digite aqui informações sobre a versão</span></li>
+            <li>1.03: <span style="color: var(--muted)">Digite aqui informações sobre a versão</span></li>
+            <li>2.00: <span style="color: var(--muted)">Digite aqui informações sobre a versão</span></li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- 7. PASSO A PASSO -->
+    <section id="passos">
+      <div class="container">
+        <h2>Passo a passo de montagem</h2>
+        <div class="steps">
+          <!-- Duplicar bloco .step para cada etapa -->
+          <article class="card step">
+            <img src="assets/passo-1.jpg" alt="Foto do passo 1" />
+            <h3>Passo 1 — Estrutura física</h3>
+            <p><!-- Descrição detalhada da ação e materiais usados. --></p>
+          </article>
+          <article class="card step">
+            <img src="assets/passo-2.jpg" alt="Foto do passo 2" />
+            <h3>Passo 2 — Ligações elétricas</h3>
+            <p><!-- Descrição detalhada da ação e materiais usados. --></p>
+          </article>
+          <article class="card step">
+            <img src="assets/passo-3.jpg" alt="Foto do passo 3" />
+            <h3>Passo 3 — Testes de LEDs e sensores</h3>
+            <p><!-- Descrição detalhada da ação e materiais usados. --></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRECHOS DE CÓDIGO -->
+    <section id="codigo">
+      <div class="container grid grid">
+        <div class="card">
+          <h2>Trechos de código essenciais</h2>
+          <pre><code><span class="c-green">// Explique aqui esse trecho do código</span>
+#include &lt;FastLED.h&gt;
+#define NUM_LEDS 8
+#define DATA_PIN 6
+CRGB leds[NUM_LEDS];
+
+<code><span class="c-green">// Explique aqui esse trecho do código</span>
+void setup() {
+  FastLED.addLeds&lt;WS2812, DATA_PIN, GRB&gt;(leds, NUM_LEDS);
+}
+
+<code><span class="c-green">// Explique aqui esse trecho do código</span>
+void loop() {
+  for (int i=0; i&lt;NUM_LEDS; i++) { leds[i] = CRGB::Yellow; FastLED.show(); delay(120); leds[i] = CRGB::Black; }
+}
+</code></pre>
+
+      <p>Neste bloco, configuramos o temporizador e os padrões para que os LEDs pisquem no mesmo BPM da música. [EDITAR]</p>
+    </section>
+
+    <!-- ACESSO AO REPOSITÓRIO E DOWNLOAD DO PROJETO -->
+<section id="download">
+  <div class="container grid grid-3">
+    <div class="card">
+      <h2>Repositório no GitHub</h2>
+      <p>Acesse o repositório completo do projeto.</p>
+      <a class="btn" href="https://github.com/rqfaelviana/light-" download>Acessar agora</a>
+    </div>
+
+    <aside class="card">
+      <h2>Download do projeto (.zip)</h2>
+      <p>O arquivo .zip contém códigos, esquemas e instruções.</p>
+      <a class="btn" href="assets/sombrinha-logo.png" download>Baixar agora</a>
+    </aside>
+
+  </div>
+</section>
+
+    <!-- 10. VÍDEO -->
+    <section id="video">
+      <div class="container">
+        <h2>Vídeo do projeto</h2>
+        <div class="video">
+          <!-- Substitua o URL abaixo (a ideia mais viável é hospedar o vídeo no youtube mesmo) -->
+          <iframe src="https://www.youtube.com/embed/USpLw_m1tv8" title="Demonstração do Gênios do Frevo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROBLEMAS ENFRENTADOS E LIÇÕES APRENDIDAS -->
+    <section id="licoes">
+      <div class="container grid grid-3">
+        <div class="card">
+          <h2>Problemas enfrentados</h2>
+          <ul>
+            <li>Digite um problema enfrentado</li>
+            <li>Digite um problema enfrentado</li>
+            <li>Digite um problema enfrentado</li>
+          </ul>
+        </div>
+        <aside class="card">
+          <h2>Lições aprendidas</h2>
+          <ul>
+            <li>Digite aqui uma lição aprendida</li>
+            <li>Digite aqui uma lição aprendida</li>
+            <li>Digite aqui uma lição aprendida</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+  </main>
+  
+  <!-- RODAPÉ -->
+  <footer>
+    <div class="container">
+      <p class="muted">© Este site é apenas para fins educacionais • Sistemas de Informação • 2025</p>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
 </html>
