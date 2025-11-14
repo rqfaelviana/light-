@@ -8,17 +8,18 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- TOPO / NAVEGAÇÃO -->
-    <div id="topo" aria-hidden="true"></div>
+  <!-- MENU / NAVEGAÇÃO -->
+  <div id="topo" aria-hidden="true"></div>
   <header>
-  <div class="container nav">
-    <a class="brand" href="#topo" aria-label="Voltar ao topo">
-      <img src="assets/img/sombrinha-logo.png" class="brand-logo" alt="Logo do projeto: Frevo Play" width="40" height="40" />
-    </a>
-      <nav aria-label="Seções do site">
+    <div class="container nav">
+      <a class="brand" href="#topo" aria-label="Voltar ao topo">
+        <img src="assets/img/sombrinha-logo.png" class="brand-logo" alt="Logo do projeto: Frevo Play" width="40" height="40" />
+      </a>
+
+      <nav class="menu-secoes" aria-label="Seções do site">
         <ul>
           <li><a href="#descricao">Descrição</a></li>
-          <li><a href="#keywords">Palavras‑chave</a></li>
+          <li><a href="#keywords">Palavras-chave</a></li>
           <li><a href="#autores">Autores</a></li>
           <li><a href="#componentes">Componentes</a></li>
           <li><a href="#apps">Apps & Plataforma</a></li>
@@ -30,96 +31,101 @@
         </ul>
       </nav>
     </div>
-</div>
   </header>
 
-  <!-- HERO -->
-<div class="hero">
-  <div class="container">
-    <h1>Frevo Play</h1>   <!-- NOME DO PROJETO -->
-    <p class="lead">
-      Documentação do protótipo físico-digital que reproduz o jogo de memorização com luzes e sons em uma
-      sombrinha de frevo (~45 × 45 cm). Esta página segue os requisitos de HTML & CSS da disciplina de
-      Introdução à Computação.
-    </p>
-    <div class="actions" style="margin-top:14px">
-      <a class="btn" href="#download">Baixar .zip do projeto</a>
-      <a class="btn secondary" href="#codigo">Ver trechos de código</a>
+  <!-- HERO  [EDITAR] -->
+  <div class="hero">
+    <div class="container" style="margin-top:0px">
+      <img class="hero-titulo" src="assets/img/frevo-play.png" alt="" aria-hidden="true">
+      <img class="hero-umbrella" src="assets/img/sombrinha.png" alt="" aria-hidden="true">
+      <!-- Não tem '<h1>' porque a imagem 'frevo-play.png' representa o título -->
+      <p class="lead" style="margin-top:60px">
+        Documentação do protótipo físico-digital que reproduz o jogo de memorização com luzes e sons em uma
+        sombrinha de frevo (~45 × 45 cm). Esta página segue os requisitos de HTML & CSS da disciplina de
+        Introdução à Computação. [EDITAR]
+      </p>
+      <div class="actions" style="margin-top:14px">
+        <a class="btn" href="#download">Baixar .zip do projeto</a>
+        <a class="btn secondary" href="#codigo">Ver trechos de código</a>
+      </div>
     </div>
   </div>
-</div>
 
-<main>
+  <main>
+    <section id="descricao">
+      <div class="container grid grid-2">
+        <!-- INFORMAÇÕES  [PREENCHIDO] -->
+        <div class="card">
+          <h2>Informações</h2>
+          <strong>Nome do projeto: </strong>Frevo Play<br>
+          <strong>Disciplina: </strong>Sistemas Digitais<br>
+          <strong>Semestre: </strong>2025.2<br>
+          <strong>Professores: </strong>Danilo e Rafael<br>
+          <strong>Curso: </strong>Sistemas de Informação<br>
+          <strong>Faculdade: </strong>Cesar School
+        </div>
 
-  <section id="descricao">
-    <div class="container grid grid-2">
-      
-      <!-- Informações (preenchido) -->
-      <div class="card">
-        <h2>Informações</h2>
-        <strong>Nome do projeto: </strong>Frevo Play<br>
-        <strong>Disciplina: </strong>Sistemas Digitais<br>
-        <strong>Semestre: </strong>2025.2<br>
-        <strong>Professores: </strong>Danilo e Rafael<br>
-        <strong>Curso: </strong>Sistemas de Informação<br>
-        <strong>Faculdade: </strong>Cesar School
+        <!-- DESCRIÇÃO DO PROJETO  [EDITAR] -->
+        <div class="card">
+          <h2>Descrição do Projeto</h2>
+          <!-- O ideal é que cada resposta tenha 2 linhas (observe o comportamente do texto pelo navegador) -->
+          <strong>Motivação: </strong>Explique por que o projeto é importante (ex.: valor cultural do frevo, aprendizagem de lógica/eletrônica, interação lúdica). [EDITAR] <br>
+          <strong>Objetivo: </strong>Defina claramente o que o protótipo deve alcançar (ex.: reproduzir sequência de LEDs/sons, registrar acertos, níveis, etc.). [EDITAR]<br>
+          <strong>Contextualização: </strong>Resuma o contexto e área de aplicação (ex.: ensino, cultura pernambucana, feiras acadêmicas). [EDITAR]
+        </div>
       </div>
 
-      <!-- Descrição do Projeto (para editar) -->
-      <div class="card">
-        <h2>Descrição do Projeto</h2>
-        <strong>Motivação: </strong>Explique por que o projeto é importante (ex.: valor cultural do frevo, aprendizagem de lógica/eletrônica, interação lúdica). [EDITAR] <br>
-        <strong>Objetivo: </strong>Defina claramente o que o protótipo deve alcançar (ex.: reproduzir sequência de LEDs/sons, registrar acertos, níveis, etc.). [EDITAR]<br>
-        <strong>Contextualização: </strong>Resuma o contexto e área de aplicação (ex.: ensino, cultura pernambucana, feiras acadêmicas). [EDITAR]
-      </div>
-    </div>
-
-    <!-- Esquema Conceitual -->
-    <div class="container" style="margin-top:16px">
-      <div class="card grid grid-2">
-        <div>
+    <!-- ESQUEMA CONCEITUAL  [EDITAR] -->
+      <div class="container grid grid-3" style="margin-top:22px">
+        <!-- Bloco de texto -->
+        <div class="card">
           <h2>Esquema conceitual do artefato</h2>
-          <p><!-- TODO: Descreva os blocos do sistema, conexões entre sensores/atuadores, microcontrolador, alimentação, etc. --></p>
           <ul>
-            <li><!-- TODO: Entradas (toque/botões/sensores capacitivos) --></li>
-            <li><!-- TODO: Processamento (Arduino/ESP32/etc.) --></li>
-            <li><!-- TODO: Saídas (LEDs RGB, buzzer/alto-falante) --></li>
-            <li><!-- TODO: Alimentação (pilhas/bateria) --></li>
+            <!-- Não é necessário tantas informações, mas fica melhor se o texto ficar do tamanho da altura imagem ao lado (observe o comportamento do texto pelo navegador) -->
+            <li>Entradas: [toque / botões / sensores capacitivos]</li>
+            <li>Processamento: [Arduino / ESP32 / etc.]</li>
+            <li>Saídas: [LEDs RGB, buzzer / alto-falante]</li>
+            <li>Alimentação: [pilhas / bateria]</li>
+            <li>Digite algo aqui</li>
+            <li>Digite algo aqui</li>
+            <li>Digite algo aqui</li>
+            <li>Digite algo aqui</li>
+            <li>Digite algo aqui</li>
+            <li>Digite algo aqui</li>
+            <li>Digite algo aqui</li>
           </ul>
         </div>
 
-        <figure>
-          <img
-            src="assets/esquema-conceitual.png"
-            alt="Esquema conceitual da sombrinha interativa"
-            style="width:100%; border-radius: 12px; border:1px solid #2a2a33; background:#0c0c10; aspect-ratio: 16/10; object-fit: cover;"
-          />
-          <figcaption style="color:var(--muted); margin-top:8px">
-            Ilustração/diagrama do sistema (substituir por imagem final).
-          </figcaption>
-        </figure>
-      </div>
-    </div>
-  </section>
-
-    <!-- 3. PALAVRAS-CHAVE -->
-    <section id="keywords">
-      <div class="container">
-        <h2>Palavras‑chave</h2>
-        <div class="badges">
-          <!-- Substitua pelos termos do projeto -->
-          <span class="badge">Frevo</span>
-          <span class="badge">Jogo de Memória</span>
-          <span class="badge">LED RGB</span>
-          <span class="badge">Sistemas Digitais</span>
-          <span class="badge">Prototipagem</span>
-          <span class="badge">Gênius</span>
-          <span class="badge">Sombrinha</span>
+        <!-- IMAGEM DO ESQUEMA  [EDITAR] -->
+        <div class="card">
+          <figure>
+            <!-- NECESSÁRIO: que a imagem tenha proporção 3x2 -->
+            <img src="assets/img/arduino.png" alt="Esquema conceitual do Frevo Play" loading="lazy" decoding="async">
+          </figure>
         </div>
       </div>
     </section>
 
-    <!-- AUTORES -->
+    <!-- PALAVRAS-CHAVE  [PREENCHIDO]-->
+    <section id="keywords">
+      <div class="container">
+        <h2>Palavras-chave</h2>
+        <div class="badges">
+          <span class="badge">frevo</span>
+          <span class="badge">jogo-da-memoria</span>
+          <span class="badge">LED-RGB</span>
+          <span class="badge">sistemas-digitais</span>
+          <span class="badge">prototipagem</span>
+          <span class="badge">genius</span>
+          <span class="badge">prototipo</span>
+          <span class="badge">arduino</span>
+          <span class="badge">sombrinha</span>
+          <span class="badge">memorizacao</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- AUTORES  [EDITAR] -->
     <section id="autores">
       <div class="container">
         <h2>Autores</h2>
@@ -194,16 +200,11 @@
               </div>
             </div>
           </div>
-
-              <img
-      class="hero-umbrella"
-      src="assets/img/sombrinha-logo.png"
-      alt=""
-      aria-hidden="true">
-  </div>
+        </div>
+      </div>
     </section>
 
-    <!-- COMPONENTES E SUPRIMENTOS -->
+    <!-- COMPONENTES E SUPRIMENTOS  [EDITAR] -->
     <section id="componentes">
       <div class="container">
         <h2>Componentes e suprimentos</h2>
@@ -247,17 +248,17 @@
       </div>
     </section>
 
-    <!-- APLICATIVOS E PLATAFORMA -->
+    <!-- APLICATIVOS E PLATAFORMA  [EDITAR] -->
     <section id="apps">
-      <div class="container grid grid-2">
+      <div class="container grid grid-3">
         <div class="card">
           <h2>Aplicativos e Plataformas</h2>
           <ul>
-            <li><strong>IDE</strong>: <!-- Arduino IDE 2.3.2, PlatformIO, etc. --></li>
-            <li><strong>Controle de versão</strong>: <!-- Git 2.x + GitHub --> </li>
-            <li><strong>Modelagem / Diagramas</strong>: <!-- Draw.io / Fritzing / KiCad --> </li>
-            <li><strong>Editor</strong>: <!-- VS Code (versão) --> </li>
-            <li><strong>Outros</strong>: <!-- Biblioteca FastLED, Tone, etc. (versões) --> </li>
+            <li><strong>IDE: </strong>Arduino IDE 2.3.2, PlatformIO, etc. [EDITAR]</li>
+            <li><strong>Controle de versão: </strong>Git 2.x + GitHub [EDITAR]</li>
+            <li><strong>Modelagem / Diagramas: </strong>Draw.io / Fritzing / KiCad [EDITAR]</li>
+            <li><strong>Editor: </strong>VS Code (versão) [EDITAR]</li>
+            <li><strong>Outros: </strong>Biblioteca FastLED, Tone, etc. [EDITAR]</li>
           </ul>
         </div>
         <aside class="card">
@@ -273,7 +274,7 @@
       </div>
     </section>
 
-    <!-- 7. PASSO A PASSO -->
+    <!-- PASSO A PASSO  [EDITAR] -->
     <section id="passos">
       <div class="container">
         <h2>Passo a passo de montagem</h2>
@@ -298,7 +299,7 @@
       </div>
     </section>
 
-    <!-- TRECHOS DE CÓDIGO -->
+    <!-- TRECHOS DE CÓDIGO  [EDITAR]-->
     <section id="codigo">
       <div class="container grid grid">
         <div class="card">
@@ -309,50 +310,53 @@
 #define DATA_PIN 6
 CRGB leds[NUM_LEDS];
 
-<code><span class="c-green">// Explique aqui esse trecho do código</span>
+<span class="c-green">// Explique aqui esse trecho do código</span>
 void setup() {
   FastLED.addLeds&lt;WS2812, DATA_PIN, GRB&gt;(leds, NUM_LEDS);
 }
 
-<code><span class="c-green">// Explique aqui esse trecho do código</span>
+<span class="c-green">// Explique aqui esse trecho do código</span>
 void loop() {
   for (int i=0; i&lt;NUM_LEDS; i++) { leds[i] = CRGB::Yellow; FastLED.show(); delay(120); leds[i] = CRGB::Black; }
 }
 </code></pre>
 
-      <p>Neste bloco, configuramos o temporizador e os padrões para que os LEDs pisquem no mesmo BPM da música. [EDITAR]</p>
+          <p>Neste bloco, configuramos o temporizador e os padrões para que os LEDs pisquem no mesmo BPM da música. [EDITAR]</p>
+        </div>
+      </div>
     </section>
 
-    <!-- ACESSO AO REPOSITÓRIO E DOWNLOAD DO PROJETO -->
-<section id="download">
-  <div class="container grid grid-3">
-    <div class="card">
-      <h2>Repositório no GitHub</h2>
-      <p>Acesse o repositório completo do projeto.</p>
-      <a class="btn" href="https://github.com/rqfaelviana/light-" download>Acessar agora</a>
-    </div>
+    <!-- ACESSO AO REPOSITÓRIO E DOWNLOAD DO PROJETO  [EDITAR] -->
+    <section id="download">
+      <div class="container grid grid-3">
+        <div class="card">
+          <h2>Repositório no GitHub</h2>
+          <p>Acesse o repositório completo do projeto.</p>
+          <!-- [PREENCHIDO] -->
+          <a class="btn" href="https://github.com/rqfaelviana/light-">Acessar agora</a>
+        </div>
 
-    <aside class="card">
-      <h2>Download do projeto (.zip)</h2>
-      <p>O arquivo .zip contém códigos, esquemas e instruções.</p>
-      <a class="btn" href="assets/sombrinha-logo.png" download>Baixar agora</a>
-    </aside>
+        <aside class="card">
+          <h2>Download do projeto (.zip)</h2>
+          <p>O arquivo .zip contém códigos, esquemas e instruções.</p>
+          <!-- [EDITAR] -->
+          <a class="btn" href="assets/img/sombrinha-logo.png" download>Baixar agora</a>
+        </aside>
+      </div>
+    </section>
 
-  </div>
-</section>
-
-    <!-- 10. VÍDEO -->
+    <!-- VÍDEO [EDITAR] -->
     <section id="video">
       <div class="container">
         <h2>Vídeo do projeto</h2>
         <div class="video">
-          <!-- Substitua o URL abaixo (a ideia mais viável é hospedar o vídeo no youtube mesmo) -->
+          <!-- Substitua o URL abaixo (é mais viável hospedar o vídeo no youtube) -->
           <iframe src="https://www.youtube.com/embed/USpLw_m1tv8" title="Demonstração do Gênios do Frevo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
       </div>
     </section>
 
-    <!-- PROBLEMAS ENFRENTADOS E LIÇÕES APRENDIDAS -->
+    <!-- PROBLEMAS ENFRENTADOS E LIÇÕES APRENDIDAS  [EDITAR] -->
     <section id="licoes">
       <div class="container grid grid-3">
         <div class="card">
@@ -374,13 +378,14 @@ void loop() {
       </div>
     </section>
   </main>
-  
-  <!-- RODAPÉ -->
+
+  <!-- RODAPÉ  [EDITAR, caso queira escrever algo melhor] -->
   <footer>
     <div class="container">
-      <p class="muted">© Este site é apenas para fins educacionais • Sistemas de Informação • 2025</p>
+      <p class="muted">© 2025 • Site para fins educacionais • Sistemas de Informação</p>
     </div>
   </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
