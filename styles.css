@@ -14,14 +14,19 @@
   --brand-w:40px;            /* largura do ícone do logo (sombrinha) */
 
   /* Posição do título frevo_play */
-  --ttl-w: 360px;   /* LARGURA do título */
+  --ttl-w: 360px;   /* Largura do título */
   --ttl-x: 170px;   /* Posição do título */
   --ttl-top: 0px;   /* Posição do título a partir do topo da seção hero */
 
   /* Posição da sombrinha */
-  --umb-w: 260px;   /* LARGURA da sombrinha */
+  --umb-w: 260px;   /* Largura da sombrinha */
   --umb-x: 240px;   /* Posição da sombrinha a partir do centro (+ direita / - esquerda) */
   --umb-top: 0px;   /* Posição da sombrinha a partir do topo da seção hero */
+
+    /* Posição dos botões da sombrinha */
+  --btns-w: 260px;   /* Largura dos botões da sombrinha */
+  --btns-x: 240px;   /* Posição dos botões a partir do centro (+ direita / - esquerda) */
+  --btns-top: 260px;   /* Posição dos botões a partir do topo da seção hero */
 }
 
 html{ scroll-behavior:smooth; }
@@ -183,6 +188,31 @@ nav a:focus-visible{
 @media (max-width: 900px){
   .hero .container{ padding-right: 0; }
   .hero-umbrella{
+    position: static;
+    transform: none;
+    display: block;
+    margin: 18px auto 0;
+    width: 220px;
+  }
+}
+
+/* Botões da sombrinha fixos: âncora no centro + offset controlado por variáveis */
+.hero-botoes{
+  position: absolute;
+  width: var(--btns-w);
+  height: auto;
+  top: var(--btns-top);               /* Posição vertical */
+  left: calc(50% + var(--btns-x));    /* Posição horizontal */
+  transform: translateX(-50%);       /* Centra a imagem no ponto definido */
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+  filter: drop-shadow(0 6px 18px rgba(0,0,0,.12));
+}
+/* Mobile: volta para o fluxo para não poluir a leitura */
+@media (max-width: 900px){
+  .hero .container{ padding-right: 0; }
+  .hero-botoes{
     position: static;
     transform: none;
     display: block;
