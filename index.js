@@ -41,10 +41,17 @@ document.addEventListener("DOMContentLoaded", () => {
     ease: "power3.out",
   });
   const header = document.querySelector("header");
+  const main = document.querySelector("main");
+  const footer = document.querySelector("footer");
 
   setTimeout(() => {
     header.classList.add("show");
   }, 150);
+
+  setTimeout(() => {
+    if (main) main.classList.add("show");
+    if (footer) footer.classList.add("show");
+  }, 300);
   const umbrella = document.querySelector(".hero-umbrella");
   const audio = document.getElementById("frevo-audio");
   let isSpining = false;

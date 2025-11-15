@@ -699,3 +699,16 @@ header nav[aria-label="Seções do site"] a {
     transform: translateX(-50%) scale(1) rotate(0);
   }
 }
+main,
+footer {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: transform 700ms cubic-bezier(0.16, 1, 0.3, 1), opacity 500ms ease;
+  transition-delay: 200ms;
+}
+
+main.show,
+footer.show {
+  opacity: 1;
+  transform: translateY(0);
+}
