@@ -62,8 +62,9 @@
         />
 
         <p class="lead" style="margin-top: 60px">
-          Memorize o ritmo! Apresentamos a documentação completa do Frevo Play, nosso protótipo físico-digital
-          que transforma a sombrinha de frevo em um emocionante jogo de memorização com luzes e sons.
+          Memorize o ritmo! Apresentamos a documentação completa do Frevo Play,
+          nosso protótipo físico-digital que transforma a sombrinha de frevo em
+          um emocionante jogo de memorização com luzes e sons.
         </p>
 
         <div class="actions" style="margin-top: 14px">
@@ -108,33 +109,45 @@
           <div class="card">
             <h2>Esquema Conceitual do Artefato</h2>
             <ul>
-              <li>Entradas (Interação do Usuário):</li>
-                  4 Botões de Fliperama. Cada botão representa uma cor do jogo.
-                Enviam sinal digital ao Arduino quando pressionados.
+              <li>
+                <strong>Entradas (Interação do Usuário):</strong> 4 Botões de
+                Fliperama. Cada botão representa uma cor do jogo. Enviam sinal
+                digital ao Arduino quando pressionados.
               </li>
-              <li>Processamento (Lógica do Sistema):</li>
-                  Arduino Uno. Lê o estado dos botões. Gera sequências aleatórias
-                  de luzes e sons. Compara a resposta do jogador com a sequência
-                  correta. Atualiza pontuação e recorde. Envia mensagens para o
-                  display LCD.
+              <li>
+                <strong>Processamento (Lógica do Sistema):</strong> Arduino Uno.
+                Lê o estado dos botões. Gera sequências aleatórias de luzes e
+                sons. Compara a resposta do jogador com a sequência correta.
+                Atualiza pontuação e recorde. Envia mensagens para o display
+                LCD.
               </li>
-              <li>Saídas (Feedback ao Usuário):</li>
-                  4 LEDs coloridos (Azul, Verde, Amarelo, Vermelho). Indicam a sequência gerada e ações do jogador.<br>
-                  Buzzer piezoelétrico. Reproduz sons correspondentes às cores. Sinaliza acerto, erro ou fim de rodada.<br>
-                  Display LCD 16x exibe mensagens, pontuação e recorde.
-
-              <li>Alimentação:</li> 
-                  Cabo USB (Conectado ao Computador) fornece energia ao Arduino, LEDs, buzzer e LCD.<br>
-              <li>Fluxo de Funcionamento:</li>    
-                  1. Sistema inicia, zera pontuação e exibe mensagem inicial no LCD.<br>
-                  2. Arduino gera uma nova sequência.<br>
-                  3. LEDs acendem e o buzzer toca seguindo a ordem.<br>
-                  4. Usuário repete a sequência pressionando os botões.<br>
-                  5. Arduino verifica: Se correto adiciona ponto e avança.<br>
-                     Se errado fim de jogo e exibe recorde Processo se repete,<br>
-                     aumentando a dificuldade. 
-               <li>Propósito Interativo: Criar uma experiência lúdica, tecnológica e cultural, estimulando a memória.</li>
-</li>
+              <li>
+                <strong>Saídas (Feedback ao Usuário):</strong><br />
+                4 LEDs coloridos (Azul, Verde, Amarelo, Vermelho). Indicam a
+                sequência gerada e ações do jogador.<br />
+                Buzzer piezoelétrico. Reproduz sons correspondentes às cores.
+                Sinaliza acerto, erro ou fim de rodada.<br />
+                Display LCD 16x exibe mensagens, pontuação e recorde.
+              </li>
+              <li>
+                <strong>Alimentação:</strong> Cabo USB (Conectado ao Computador)
+                fornece energia ao Arduino, LEDs, buzzer e LCD.
+              </li>
+              <li>
+                <strong>Fluxo de Funcionamento:</strong><br />
+                1. Sistema inicia, zera pontuação e exibe mensagem inicial no
+                LCD.<br />
+                2. Arduino gera uma nova sequência.<br />
+                3. LEDs acendem e o buzzer toca seguindo a ordem.<br />
+                4. Usuário repete a sequência pressionando os botões.<br />
+                5. Arduino verifica: Se correto adiciona ponto e avança. Se
+                errado fim de jogo e exibe recorde. Processo se repete,
+                aumentando a dificuldade.
+              </li>
+              <li>
+                <strong>Propósito Interativo:</strong> Criar uma experiência
+                lúdica, tecnológica e cultural, estimulando a memória.
+              </li>
             </ul>
           </div>
 
@@ -160,7 +173,6 @@
             <span class="badge">Sistemas Digitais</span>
             <span class="badge">Genius</span>
             <span class="badge">Arduino</span>
-            
           </div>
         </div>
       </section>
@@ -258,13 +270,13 @@
               </div>
             </div>
             <div class="card author">
-              <img src="assets/img/MC.jpeg" alt="Maria"  />
+              <img src="assets/img/MC.jpeg" alt="Maria" />
               <div>
                 <div class="name">Maria Clara</div>
                 <div class="links">
                   <a
                     class="chip"
-                    href="https://github.com/SEU_USUARIO"
+                    href="https://github.com/mclaralopess"
                     target="_blank"
                     rel="noopener"
                     >GitHub</a
@@ -348,14 +360,23 @@
                 <tr>
                   <td>1</td>
                   <td>Arduino UNO</td>
-                  <td>Possui portas digitais e analógicas, além de alimentação via USB.</td>
-                  <td>Placa responsável por receber os sinais dos botões, controlar os LEDs e acionar o buzzer.</td>
+                  <td>
+                    Possui portas digitais e analógicas, além de alimentação via
+                    USB.
+                  </td>
+                  <td>
+                    Placa responsável por receber os sinais dos botões,
+                    controlar os LEDs e acionar o buzzer.
+                  </td>
                   <td>1</td>
                 </tr>
                 <tr>
                   <td>2</td>
-                  <td>Protoboard </td>
-                  <td>Utilizada para conectar resistores, LEDs, botões, buzzer e jumpers.</td>
+                  <td>Protoboard</td>
+                  <td>
+                    Utilizada para conectar resistores, LEDs, botões, buzzer e
+                    jumpers.
+                  </td>
                   <td>A Protoboard organiza e conecta o hardware.</td>
                   <td>1</td>
                 </tr>
@@ -363,56 +384,82 @@
                   <td>3</td>
                   <td>LEDs</td>
                   <td>Usados para indicar ações ou respostas do sistema.</td>
-                  <td>Emitir luz ao serem acionados pelo Arduino nas cores Azul, Verde, Amarelo, Vermelho.</td>
+                  <td>
+                    Emitir luz ao serem acionados pelo Arduino nas cores Azul,
+                    Verde, Amarelo, Vermelho.
+                  </td>
                   <td>8</td>
-                  </tr>
+                </tr>
                 <tr>
                   <td>4</td>
                   <td>Botões</td>
-                  <td>Modelo de Fliperama, usados para interagir com o sistema.</td>
-                  <td> Receber a interação do usuário. Cada botão envia um sinal ao Arduino quando pressionado.</td>
+                  <td>
+                    Modelo de Fliperama, usados para interagir com o sistema.
+                  </td>
+                  <td>
+                    Receber a interação do usuário. Cada botão envia um sinal ao
+                    Arduino quando pressionado.
+                  </td>
                   <td>4</td>
                 </tr>
                 <tr>
                   <td>5</td>
                   <td>Buzzer</td>
-                  <td>Dispositivo que converte energia elétrica em ondas sonoras.</td>
-                  <td>Indica erros e acertos no jogo, confirmando se o usuário pressionou o botão com sucesso.</td>
+                  <td>
+                    Dispositivo que converte energia elétrica em ondas sonoras.
+                  </td>
+                  <td>
+                    Indica erros e acertos no jogo, confirmando se o usuário
+                    pressionou o botão com sucesso.
+                  </td>
                   <td>2</td>
                 </tr>
                 <tr>
                   <td>6</td>
                   <td>Resistores</td>
-                  <td>O resistor tem como principal função controlar o fluxo de corrente elétrica no circuito. Ele protege os componentes evitando que recebam mais corrente do que suportam.</td>
+                  <td>
+                    O resistor tem como principal função controlar o fluxo de
+                    corrente elétrica no circuito. Ele protege os componentes
+                    evitando que recebam mais corrente do que suportam.
+                  </td>
                   <td>Garantem o bom funcionamento dos LEDs e dos botões.</td>
                   <td>12</td>
-                </tr> 
+                </tr>
                 <tr>
                   <td>7</td>
                   <td>Jumpers</td>
-                  <td>Fios usados para ligações de sinal, positivo e negativo.</td>
-                  <td>Fazer todas as conexões entre o Arduino e a Protoboard.</td>
+                  <td>
+                    Fios usados para ligações de sinal, positivo e negativo.
+                  </td>
+                  <td>
+                    Fazer todas as conexões entre o Arduino e a Protoboard.
+                  </td>
                   <td>18</td>
-                </tr> 
+                </tr>
                 <tr>
                   <td>8</td>
                   <td>Display Tela LCD 16x2 backlight.</td>
-                  <td>Fios usados para ligações de sinal, positivo e negativo.</td>
-                  <td>Usado para exibir o nome "Recorde" bem como sua pontuação.</td>
+                  <td>
+                    Fios usados para ligações de sinal, positivo e negativo.
+                  </td>
+                  <td>
+                    Usado para exibir o nome "Recorde" bem como sua pontuação.
+                  </td>
                   <td>1</td>
                 </tr>
                 <tr>
                   <td>9</td>
                   <td>Cabo USB</td>
-                  <td>Um cabo USB é um componente essencial para conectar dispositivos eletrônicos.</td>
-                  <td>Alimentar o Arduino e enviar o código do computador para a placa. Transmitindo os dados e alimentando eletricamente.</td>
-                  <td>1</td> 
-                </tr>       
-
-
-
-
-                </tr>  
+                  <td>
+                    Um cabo USB é um componente essencial para conectar
+                    dispositivos eletrônicos.
+                  </td>
+                  <td>
+                    Alimentar o Arduino e enviar o código do computador para a
+                    placa. Transmitindo os dados e alimentando eletricamente.
+                  </td>
+                  <td>1</td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -420,26 +467,17 @@
       </section>
 
       <section id="apps">
-         <div class="container grid grid-1">
+        <div class="container grid grid-1">
           <div class="card">
-          <h2>Aplicativos e Plataformas</h2>
-          <ul>
-              <li>
-                <strong>Tinkercad:</strong> Versão Web 2025
-              </li>
-              <li>
-                <strong>Figma:</strong> Versão 124.9(Desktop) 
-              </li>
-              <li>
-                <strong>Visual Studio Code:</strong> Versão1.94
-              </li>
-              <li><strong>Trello:</strong> Versão Web 2025
-              </li>
-              <li>
-                <strong>GitHub:</strong> Versão Git 2.46
+            <h2>Aplicativos e Plataformas</h2>
+            <ul>
+              <li><strong>Tinkercad:</strong> Versão Web 2025</li>
+              <li><strong>Figma:</strong> Versão 124.9(Desktop)</li>
+              <li><strong>Visual Studio Code:</strong> Versão1.94</li>
+              <li><strong>Trello:</strong> Versão Web 2025</li>
+              <li><strong>GitHub:</strong> Versão Git 2.46</li>
             </ul>
           </div>
-          
         </div>
       </section>
 
@@ -467,7 +505,7 @@
       </section>
 
       <section id="codigo">
-        <div class="container grid grid">
+        <div class="container grid">
           <div class="card">
             <h2>Trechos de código essenciais</h2>
             <pre><code><span class="c-green">// Explique aqui esse trecho do código</span>
@@ -534,28 +572,38 @@ void loop() {
           <div class="card">
             <h2>Problemas Enfrentados</h2>
             <ul>
-              <li>Durante o projeto, a gente percebeu que nada funciona de primeira e isso fez parte do aprendizado. 
-                Logo no começo, tivemos um pouco de frustração com as conexões na protoboard. Alguns LEDs não acendiam 
-                e os botões pareciam “mortos”. Depois de vários testes, descobrimos que alguns fios estavam no lugar errado. 
-                A solução foi respirar fundo, desmontar tudo e refazer com calma, etapa por etapa. Também tivemos dificuldades 
-                com buzzer. Ele não emitia som. Só depois percebemos que estávamos tratando o buzzer passivo como se fosse ativo. 
-                Assim que ajustamos o código e ligamos corretamente, ele funcionou e foi um alívio ouvir o primeiro bip.
-           </li>
-              
-        
+              <li>
+                Durante o projeto, a gente percebeu que nada funciona de
+                primeira e isso fez parte do aprendizado. Logo no começo,
+                tivemos um pouco de frustração com as conexões na protoboard.
+                Alguns LEDs não acendiam e os botões pareciam “mortos”. Depois
+                de vários testes, descobrimos que alguns fios estavam no lugar
+                errado. A solução foi respirar fundo, desmontar tudo e refazer
+                com calma, etapa por etapa. Também tivemos dificuldades com
+                buzzer. Ele não emitia som. Só depois percebemos que estávamos
+                tratando o buzzer passivo como se fosse ativo. Assim que
+                ajustamos o código e ligamos corretamente, ele funcionou e foi
+                um alívio ouvir o primeiro bip.
+              </li>
             </ul>
           </div>
           <aside class="card">
             <h2>Lições Aprendidas</h2>
             <ul>
-              <li>Esse projeto ensinou mais do que só Arduino. Aprendemos a ter paciência, a revisar o que fizemos e a ter 
-                calma quando as coisas não funcionam. Percebemos também que organizar o circuito desde o início evita muito 
-                sofrimento depois. Outra lição importante foi entender cada componente antes de usar. Ler a documentação, 
-                procurar exemplos e testar individualmente fez toda a diferença. No fim, o que mais ficou foi a sensação de 
-                que errar faz parte do processo e que cada erro ajudou a gente a entender melhor como tudo funciona. Depois
-                 de tanta tentativa e erro, ver o protótipo funcionando foi uma vitória enorme para a equipe.
+              <li>
+                Esse projeto ensinou mais do que só Arduino. Aprendemos a ter
+                paciência, a revisar o que fizemos e a ter calma quando as
+                coisas não funcionam. Percebemos também que organizar o circuito
+                desde o início evita muito sofrimento depois. Outra lição
+                importante foi entender cada componente antes de usar. Ler a
+                documentação, procurar exemplos e testar individualmente fez
+                toda a diferença. No fim, o que mais ficou foi a sensação de que
+                errar faz parte do processo e que cada erro ajudou a gente a
+                entender melhor como tudo funciona. Depois de tanta tentativa e
+                erro, ver o protótipo funcionando foi uma vitória enorme para a
+                equipe.
               </li>
-              </ul>
+            </ul>
           </aside>
         </div>
       </section>
