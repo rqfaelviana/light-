@@ -62,10 +62,8 @@
         />
 
         <p class="lead" style="margin-top: 60px">
-          Documentação do protótipo físico-digital que reproduz o jogo de
-          memorização com luzes e sons em uma sombrinha de frevo (~45 × 45 cm).
-          Esta página segue os requisitos de HTML & CSS da disciplina de
-          Introdução à Computação. [EDITAR]
+          Memorize o ritmo! Apresentamos a documentação completa do Frevo Play, nosso protótipo físico-digital
+          que transforma a sombrinha de frevo em um emocionante jogo de memorização com luzes e sons.
         </p>
 
         <div class="actions" style="margin-top: 14px">
@@ -90,40 +88,60 @@
 
           <div class="card">
             <h2>Descrição do Projeto</h2>
-            <strong>Motivação: </strong>Explique por que o projeto é importante
-            (ex.: valor cultural do frevo, aprendizagem de lógica/eletrônica,
-            interação lúdica). [EDITAR] <br />
-            <strong>Objetivo: </strong>Defina claramente o que o protótipo deve
-            alcançar (ex.: reproduzir sequência de LEDs/sons, registrar acertos,
-            níveis, etc.). [EDITAR]<br />
-            <strong>Contextualização: </strong>Resuma o contexto e área de
-            aplicação (ex.: ensino, cultura pernambucana, feiras acadêmicas).
-            [EDITAR]
+            <strong>Motivação: </strong>O FrevoPlay busca aproximar o frevo da
+            tecnologia, oferecendo uma experiência interativa e moderna. Além
+            disso, permite consolidar na prática os conhecimentos adquiridos em
+            Arduino e Eletrônica.
+            <br />
+            <strong>Objetivo: </strong>Criar um artefato octogonal inspirado na
+            sombrinha de frevo, utilizando LEDs, botões e efeitos sonoros para
+            proporcionar uma experiência interativa que conecta cultura e
+            tecnologia.<br />
+            <strong>Contextualização: </strong>Este projeto surge dentro da área
+            de prototipagem interativa, unindo eletrônica, programação e design.
+            A proposta é criar uma experiência que lembra o clássico jogo
+            Genius, mas adaptada à estética e ao ritmo da cultura pernambucana.
           </div>
         </div>
 
         <div class="container grid grid-3" style="margin-top: 22px">
           <div class="card">
-            <h2>Esquema conceitual do artefato</h2>
+            <h2>Esquema Conceitual do Artefato</h2>
             <ul>
-              <li>Entradas: [toque / botões / sensores capacitivos]</li>
-              <li>Processamento: [Arduino / ESP32 / etc.]</li>
-              <li>Saídas: [LEDs RGB, buzzer / alto-falante]</li>
-              <li>Alimentação: [pilhas / bateria]</li>
-              <li>Digite algo aqui</li>
-              <li>Digite algo aqui</li>
-              <li>Digite algo aqui</li>
-              <li>Digite algo aqui</li>
-              <li>Digite algo aqui</li>
-              <li>Digite algo aqui</li>
-              <li>Digite algo aqui</li>
+              <li>Entradas (Interação do Usuário):</li>
+                  4 Botões de Fliperama. Cada botão representa uma cor do jogo.
+                Enviam sinal digital ao Arduino quando pressionados.
+              </li>
+              <li>Processamento (Lógica do Sistema):</li>
+                  Arduino Uno. Lê o estado dos botões. Gera sequências aleatórias
+                  de luzes e sons. Compara a resposta do jogador com a sequência
+                  correta. Atualiza pontuação e recorde. Envia mensagens para o
+                  display LCD.
+              </li>
+              <li>Saídas (Feedback ao Usuário):</li>
+                  4 LEDs coloridos (Azul, Verde, Amarelo, Vermelho). Indicam a sequência gerada e ações do jogador.<br>
+                  Buzzer piezoelétrico. Reproduz sons correspondentes às cores. Sinaliza acerto, erro ou fim de rodada.<br>
+                  Display LCD 16x exibe mensagens, pontuação e recorde.
+
+              <li>Alimentação:</li> 
+                  Cabo USB (Conectado ao Computador) fornece energia ao Arduino, LEDs, buzzer e LCD.<br>
+              <li>Fluxo de Funcionamento:</li>    
+                  1. Sistema inicia, zera pontuação e exibe mensagem inicial no LCD.<br>
+                  2. Arduino gera uma nova sequência.<br>
+                  3. LEDs acendem e o buzzer toca seguindo a ordem.<br>
+                  4. Usuário repete a sequência pressionando os botões.<br>
+                  5. Arduino verifica: Se correto adiciona ponto e avança.<br>
+                     Se errado fim de jogo e exibe recorde Processo se repete,<br>
+                     aumentando a dificuldade. 
+               <li>Propósito Interativo: Criar uma experiência lúdica, tecnológica e cultural, estimulando a memória.</li>
+</li>
             </ul>
           </div>
 
           <div class="card">
             <figure>
               <img
-                src="assets/img/arduino.png"
+                src="assets/img/arduinoo.jpeg"
                 alt="Esquema conceitual do Frevo Play"
                 loading="lazy"
                 decoding="async"
@@ -137,16 +155,12 @@
         <div class="container">
           <h2>Palavras-chave</h2>
           <div class="badges">
-            <span class="badge">frevo</span>
-            <span class="badge">jogo-da-memoria</span>
-            <span class="badge">LED-RGB</span>
-            <span class="badge">sistemas-digitais</span>
-            <span class="badge">prototipagem</span>
-            <span class="badge">genius</span>
-            <span class="badge">prototipo</span>
-            <span class="badge">arduino</span>
-            <span class="badge">sombrinha</span>
-            <span class="badge">memorizacao</span>
+            <span class="badge">Frevo</span>
+            <span class="badge">Jogo da Memoria</span>
+            <span class="badge">Sistemas Digitais</span>
+            <span class="badge">Genius</span>
+            <span class="badge">Arduino</span>
+            
           </div>
         </div>
       </section>
@@ -162,14 +176,14 @@
                 <div class="links">
                   <a
                     class="chip"
-                    href="https://github.com/SEU_USUARIO"
+                    href="https://github.com/IsabellyRibeiroc"
                     target="_blank"
                     rel="noopener"
                     >GitHub</a
                   >
                   <a
                     class="chip"
-                    href="https://www.linkedin.com/in/SEU_PERFIL"
+                    href="https://www.linkedin.com/in/isabellyribeiroc/"
                     target="_blank"
                     rel="noopener"
                     >LinkedIn</a
@@ -184,7 +198,7 @@
                 <div class="links">
                   <a
                     class="chip"
-                    href="https://github.com/SEU_USUARIO"
+                    href="https://github.com/jeanaugustox"
                     target="_blank"
                     rel="noopener"
                     >GitHub</a
@@ -206,14 +220,14 @@
                 <div class="links">
                   <a
                     class="chip"
-                    href="https://github.com/SEU_USUARIO"
+                    href="https://github.com/kellwenigor"
                     target="_blank"
                     rel="noopener"
                     >GitHub</a
                   >
                   <a
                     class="chip"
-                    href="https://www.linkedin.com/in/SEU_PERFIL"
+                    href="https://www.linkedin.com/in/kellwencosta/"
                     target="_blank"
                     rel="noopener"
                     >LinkedIn</a
@@ -222,20 +236,20 @@
               </div>
             </div>
             <div class="card author">
-              <img src="assets/img/Lisa.jpg" alt="Lisa" />
+              <img src="assets/img/lisa.jpeg" alt="Lisa" />
               <div>
                 <div class="name">Lisa Sales</div>
                 <div class="links">
                   <a
                     class="chip"
-                    href="https://github.com/SEU_USUARIO"
+                    href="https://github.com/lisasalescesar"
                     target="_blank"
                     rel="noopener"
                     >GitHub</a
                   >
                   <a
                     class="chip"
-                    href="https://www.linkedin.com/in/SEU_PERFIL"
+                    href="https://www.linkedin.com/in/lisa-sales-45338a222/"
                     target="_blank"
                     rel="noopener"
                     >LinkedIn</a
@@ -244,7 +258,7 @@
               </div>
             </div>
             <div class="card author">
-              <img src="assets/img/Maria.jpg" alt="Maria" />
+              <img src="assets/img/MC.jpeg" alt="Maria"  />
               <div>
                 <div class="name">Maria Clara</div>
                 <div class="links">
@@ -266,20 +280,20 @@
               </div>
             </div>
             <div class="card author">
-              <img src="assets/img/Rafael.jpg" alt="Rafael" />
+              <img src="assets/img/RAFAEL.jpg" alt="Rafael" />
               <div>
                 <div class="name">Rafael Viana</div>
                 <div class="links">
                   <a
                     class="chip"
-                    href="https://github.com/SEU_USUARIO"
+                    href="http://github.com/rqfaelviana"
                     target="_blank"
                     rel="noopener"
                     >GitHub</a
                   >
                   <a
                     class="chip"
-                    href="https://www.linkedin.com/in/SEU_PERFIL"
+                    href="https://www.linkedin.com/in/rafael-lucasviana"
                     target="_blank"
                     rel="noopener"
                     >LinkedIn</a
@@ -301,7 +315,7 @@
                   >
                   <a
                     class="chip"
-                    href="https://www.linkedin.com/in/SEU_PERFIL"
+                    href="https://www.linkedin.com/in/rhayssasantos43aa60b071/"
                     target="_blank"
                     rel="noopener"
                     >LinkedIn</a
@@ -319,39 +333,86 @@
           <div class="table-wrap">
             <table>
               <caption>
-                Lista de componentes e suprimentos usados no projeto.
+                Lista de Componentes e Suprimentos usados no projeto.
               </caption>
               <thead>
                 <tr>
                   <th>#</th>
                   <th>Componente/Suprimento</th>
-                  <th>Descrição / Especificação</th>
-                  <th>Código de referência</th>
-                  <th>Qtd.</th>
+                  <th>Descrição</th>
+                  <th>Função</th>
+                  <th>Quantidade</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td>1</td>
-                  <td>Microcontrolador</td>
-                  <td></td>
-                  <td></td>
+                  <td>Arduino UNO</td>
+                  <td>Possui portas digitais e analógicas, além de alimentação via USB.</td>
+                  <td>Placa responsável por receber os sinais dos botões, controlar os LEDs e acionar o buzzer.</td>
                   <td>1</td>
                 </tr>
                 <tr>
                   <td>2</td>
-                  <td>LEDs RGB endereçáveis</td>
-                  <td></td>
-                  <td></td>
-                  <td>8</td>
+                  <td>Protoboard </td>
+                  <td>Utilizada para conectar resistores, LEDs, botões, buzzer e jumpers.</td>
+                  <td>A Protoboard organiza e conecta o hardware.</td>
+                  <td>1</td>
                 </tr>
                 <tr>
                   <td>3</td>
-                  <td>Sensor/Toque</td>
-                  <td></td>
-                  <td></td>
+                  <td>LEDs</td>
+                  <td>Usados para indicar ações ou respostas do sistema.</td>
+                  <td>Emitir luz ao serem acionados pelo Arduino nas cores Azul, Verde, Amarelo, Vermelho.</td>
                   <td>8</td>
+                  </tr>
+                <tr>
+                  <td>4</td>
+                  <td>Botões</td>
+                  <td>Modelo de Fliperama, usados para interagir com o sistema.</td>
+                  <td> Receber a interação do usuário. Cada botão envia um sinal ao Arduino quando pressionado.</td>
+                  <td>4</td>
                 </tr>
+                <tr>
+                  <td>5</td>
+                  <td>Buzzer</td>
+                  <td>Dispositivo que converte energia elétrica em ondas sonoras.</td>
+                  <td>Indica erros e acertos no jogo, confirmando se o usuário pressionou o botão com sucesso.</td>
+                  <td>2</td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td>Resistores</td>
+                  <td>O resistor tem como principal função controlar o fluxo de corrente elétrica no circuito. Ele protege os componentes evitando que recebam mais corrente do que suportam.</td>
+                  <td>Garantem o bom funcionamento dos LEDs e dos botões.</td>
+                  <td>12</td>
+                </tr> 
+                <tr>
+                  <td>7</td>
+                  <td>Jumpers</td>
+                  <td>Fios usados para ligações de sinal, positivo e negativo.</td>
+                  <td>Fazer todas as conexões entre o Arduino e a Protoboard.</td>
+                  <td>18</td>
+                </tr> 
+                <tr>
+                  <td>8</td>
+                  <td>Display Tela LCD 16x2 backlight.</td>
+                  <td>Fios usados para ligações de sinal, positivo e negativo.</td>
+                  <td>Usado para exibir o nome "Recorde" bem como sua pontuação.</td>
+                  <td>1</td>
+                </tr>
+                <tr>
+                  <td>9</td>
+                  <td>Cabo USB</td>
+                  <td>Um cabo USB é um componente essencial para conectar dispositivos eletrônicos.</td>
+                  <td>Alimentar o Arduino e enviar o código do computador para a placa. Transmitindo os dados e alimentando eletricamente.</td>
+                  <td>1</td> 
+                </tr>       
+
+
+
+
+                </tr>  
               </tbody>
             </table>
           </div>
@@ -359,62 +420,26 @@
       </section>
 
       <section id="apps">
-        <div class="container grid grid-3">
+         <div class="container grid grid-1">
           <div class="card">
-            <h2>Aplicativos e Plataformas</h2>
-            <ul>
+          <h2>Aplicativos e Plataformas</h2>
+          <ul>
               <li>
-                <strong>IDE: </strong>Arduino IDE 2.3.2, PlatformIO, etc.
-                [EDITAR]
+                <strong>Tinkercad:</strong> Versão Web 2025
               </li>
               <li>
-                <strong>Controle de versão: </strong>Git 2.x + GitHub [EDITAR]
+                <strong>Figma:</strong> Versão 124.9(Desktop) 
               </li>
               <li>
-                <strong>Modelagem / Diagramas: </strong>Draw.io / Fritzing /
-                KiCad [EDITAR]
+                <strong>Visual Studio Code:</strong> Versão1.94
               </li>
-              <li><strong>Editor: </strong>VS Code (versão) [EDITAR]</li>
+              <li><strong>Trello:</strong> Versão Web 2025
+              </li>
               <li>
-                <strong>Outros: </strong>Biblioteca FastLED, Tone, etc. [EDITAR]
-              </li>
+                <strong>GitHub:</strong> Versão Git 2.46
             </ul>
           </div>
-          <aside class="card">
-            <h2>Notas de versão</h2>
-            <ul class="cinza">
-              <li>
-                1.00:
-                <span style="color: var(--muted)"
-                  >Digite aqui informações sobre a versão</span
-                >
-              </li>
-              <li>
-                1.01:
-                <span style="color: var(--muted)"
-                  >Digite aqui informações sobre a versão</span
-                >
-              </li>
-              <li>
-                1.02:
-                <span style="color: var(--muted)"
-                  >Digite aqui informações sobre a versão</span
-                >
-              </li>
-              <li>
-                1.03:
-                <span style="color: var(--muted)"
-                  >Digite aqui informações sobre a versão</span
-                >
-              </li>
-              <li>
-                2.00:
-                <span style="color: var(--muted)"
-                  >Digite aqui informações sobre a versão</span
-                >
-              </li>
-            </ul>
-          </aside>
+          
         </div>
       </section>
 
@@ -507,20 +532,30 @@ void loop() {
       <section id="licoes">
         <div class="container grid grid-3">
           <div class="card">
-            <h2>Problemas enfrentados</h2>
+            <h2>Problemas Enfrentados</h2>
             <ul>
-              <li>Digite um problema enfrentado</li>
-              <li>Digite um problema enfrentado</li>
-              <li>Digite um problema enfrentado</li>
+              <li>Durante o projeto, a gente percebeu que nada funciona de primeira e isso fez parte do aprendizado. 
+                Logo no começo, tivemos um pouco de frustração com as conexões na protoboard. Alguns LEDs não acendiam 
+                e os botões pareciam “mortos”. Depois de vários testes, descobrimos que alguns fios estavam no lugar errado. 
+                A solução foi respirar fundo, desmontar tudo e refazer com calma, etapa por etapa. Também tivemos dificuldades 
+                com buzzer. Ele não emitia som. Só depois percebemos que estávamos tratando o buzzer passivo como se fosse ativo. 
+                Assim que ajustamos o código e ligamos corretamente, ele funcionou e foi um alívio ouvir o primeiro bip.
+           </li>
+              
+        
             </ul>
           </div>
           <aside class="card">
-            <h2>Lições aprendidas</h2>
+            <h2>Lições Aprendidas</h2>
             <ul>
-              <li>Digite aqui uma lição aprendida</li>
-              <li>Digite aqui uma lição aprendida</li>
-              <li>Digite aqui uma lição aprendida</li>
-            </ul>
+              <li>Esse projeto ensinou mais do que só Arduino. Aprendemos a ter paciência, a revisar o que fizemos e a ter 
+                calma quando as coisas não funcionam. Percebemos também que organizar o circuito desde o início evita muito 
+                sofrimento depois. Outra lição importante foi entender cada componente antes de usar. Ler a documentação, 
+                procurar exemplos e testar individualmente fez toda a diferença. No fim, o que mais ficou foi a sensação de 
+                que errar faz parte do processo e que cada erro ajudou a gente a entender melhor como tudo funciona. Depois
+                 de tanta tentativa e erro, ver o protótipo funcionando foi uma vitória enorme para a equipe.
+              </li>
+              </ul>
           </aside>
         </div>
       </section>

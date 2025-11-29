@@ -325,7 +325,9 @@ section h2 {
   margin-top: 0;
 }
 
+
 /* Grids */
+
 .grid {
   display: grid;
   gap: 16px;
@@ -335,6 +337,7 @@ section h2 {
 }
 .grid-3 {
   grid-template-columns: 1fr;
+
 }
 .grid-4 {
   grid-template-columns: 1fr;
