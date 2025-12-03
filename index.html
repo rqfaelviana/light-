@@ -33,6 +33,7 @@
             <li><a href="#apps">Apps & Plataforma</a></li>
             <li><a href="#codigo">Código</a></li>
             <li><a href="#download">Download</a></li>
+            <li><a href="#passos">Passo a passo</a></li>
             <li><a href="#video">Vídeo</a></li>
             <li><a href="#licoes">Lições</a></li>
           </ul>
@@ -624,10 +625,7 @@ void loop() {
 
 </code></pre>
 
-            <p>
-              Neste bloco, configuramos o temporizador e os padrões para que os
-              LEDs pisquem no mesmo BPM da música. [EDITAR]
-            </p>
+            <p></p>
           </div>
         </div>
       </section>
@@ -649,6 +647,61 @@ void loop() {
               >Baixar agora</a
             >
           </aside>
+        </div>
+      </section>
+
+      <section id="passos">
+        <div class="container">
+          <h2>Passo a passo de montagem</h2>
+          <div class="steps">
+            <article class="card step">
+              <img src="assets/img/1.jpeg" alt="Foto do passo 1" />
+              <h3>Passo 1 — Estrutura física</h3>
+              <p>
+                1. Cortar a laser a estrutura da base em MDF em formato de 2
+                octógonos (40X40cm) com 8 retângulos de 20x10cm.<br />
+                2. Cortar os orifícios onde cada botão de Fliperama ficará
+                (espaçamento uniforme). Para cada botão, um furo do diâmetro do
+                botão 26.3mm.<br />
+                3. Cortar os furos a laser de 10mm para ser colocado os LEDs.
+                <br />
+                4. Fazer 6 furos de 5mm com a furadeira para a saída do som.<br />
+                5. Fazer orifícios com furadeira na base pra ser colocado o
+                botão de ON/OFF.<br />
+                6. Lixar bordas e canais de passagem. <br />
+              </p>
+            </article>
+            <article class="card step">
+              <img src="assets/img/2.jpeg" alt="Foto do passo 2" />
+              <h3>Passo 2 — Instalar e fixar os botões e suportes de LED</h3>
+
+              <p>
+                Materiais: botões de Fliperama, plásticos, LEDs, cola quente.<br />
+                1. Insira cada botão no furo correspondente e rosqueie a porca
+                de fixação por trás até estar firme.<br />
+                2. Se os botões tiverem LED integrado, alinhe-os
+                corretamente.<br />
+                3. Verifique mecanicamente: pressione várias vezes para garantir
+                que não há folgas.<br />
+                Testar / Resultado: botões firmes, sem folgas.<br />
+              </p>
+            </article>
+            <article class="card step">
+              <img src="assets/img/3.jpeg" alt="Foto do passo 3" />
+              <h3>Passo 3 — Montagem e teste do circuito na protoboard</h3>
+              <p>
+                1. Ligue os LEDs: pino digital → resistor 220–330Ω → LED →
+                GND.<br />
+                2. Conecte cada botão: um terminal ao pino digital.<br />
+                3. adicione resistor pull-down 10 kΩ entre o pino e GND.<br />
+                4. Conecte o buzzer a um pino digital.<br />
+                5. Conecte o LCD conforme padrão.<br />
+                6. Ligue o Arduino ao computador e, com código de teste simples,
+                verifique: cada LED acende, cada botão é detectado, o buzzer soa
+                e o LCD mostra texto de teste.<br />
+              </p>
+            </article>
+          </div>
         </div>
       </section>
 
