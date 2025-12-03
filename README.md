@@ -1,105 +1,39 @@
-# 📘 Fluxo de trabalho
+<h1 align="center">Frevo Play</h1>
 
-- ***
+<p align="center"> O <strong>Frevo Play</strong> é um projeto acadêmico desenvolvido em Arduino, criado com o objetivo de explorar a interatividade entre tecnologia e cultura. Neste repositório, você encontrará uma descrição completa do projeto, seus objetivos, suas funcionalidades e a forma como ele foi construído. </p> <p align="center"> Aqui apresentamos não apenas o funcionamento do Frevo Play, mas também as habilidades aplicadas durante o desenvolvimento, os desafios enfrentados e as soluções implementadas. Você também pode acessar exemplos práticos e documentação técnica  </p>
 
-## 🚀 Objetivo deste README
+<br>
 
-Guia para **ajudar o grupo a entender o fluxo de trabalho no Git/GitHub**
+<p align="center">
+  <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-portfólio">Portfólio</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-licença">Licença</a>
+</p>
+
+<br>
+
+<p align="center">
+  <img alt="License" src="https://img.shields.io/static/v1?label=license&message=MIT&color=49AA26&labelColor=000000">
+</p>
 
 ---
 
-## 🛠️ Passo a Passo para Começar
+## 🚀 Tecnologias
 
-### 🪄 1. Clonar o repositório (baixar o projeto)
+Este projeto foi desenvolvido utilizando as seguintes tecnologias:
 
-Primeiro, copie o link HTTPS do repositório no GitHub (botão verde “Code”).
+- [JavaScript]
+- [CSS]
+- [HTML]
 
-No terminal (VSCode, Git Bash etc), digite:
+---
 
-```bash
-git clone https://github.com/usuario/nome-do-repositorio.git
-```
+## 📂 Portfólio
 
-Entre na pasta clonada:
+🔗 [Acesse aqui o site](https://portfolio-ma3fxg0ty.vercel.app/)
 
-```bash
-cd nome-da-pasta-clonada
-```
+---
 
-### ### 🪄 2. O que é uma branch? (e por que usar)
+## 📝 Licença
 
-Uma branch é uma cópia seperada do projeto principal (main).
-Podem ser feitas alterações na branch criada (cópia da main) sem mexer diretamente no projeto principal.
-
-Porque é útil:
-
-- Evita que duas pessoas editem o mesmo arquivo ao mesmo tempo e causem conflitos.
-
-- Permite que coisas possam ser testadas sem interferir nada no projeto principal.
-
-- Mantém o código principal estável.
-
-Exemplo:
-
-- Lisa cria a branch `feature/pagina` e trabalha só nessa parte.
-- Jean cria a branch `feature/estilos-css` e mexe apenas no css.
-- Depois, os dois juntam(fazem merge) com a main sem apagar o trabalho um do outro. (Essa parte do merge eu posso fazer ou demonstrar na prática o que é e como fazer).
-
-### ### 🪄 3. Criar uma nova branch
-
-Crie sempre uma branch com o nome da funcionalidade que vai trabalhar:
-
-```bash
-git checkout -b feature/nome-da-sua-branch
-```
-
-Depois desse comando, você já está dentro da branche e pode codar à vontade.
-
-### ### 🪄 4. Fazer alterações
-
-Depois que você fizer as modificações necessárias (HTML, JS, CSS, adição de imagens, etc).
-
-Salva tudo `Ctrl + S`
-
-### ### 🪄 5. Adicionar e confirmar (commit) as mudanças
-
-- 1. Ver os arquivos modificados:
-
-```bash
-git status
-```
-
-- 2. Adicionar os arquivos modificados:
-
-```bash
-git add .
-```
-
-Se foi apenas um arquivo modificado, faça:
-
-```bash
-git add nome exato do arquivo que foi modificado (index.html)
-```
-
-- 3. Faça um commit com uma mensagem breve e descritiva:
-
-```bash
-git commit -m "Descrição do que foi feito"
-```
-
-### ### 🪄 6. Enviar (push) suas alterações para o Github
-
-```bash
-git push origin (nome da branch que você criou)
-```
-
-### ### 🪄 7. Atualizar o projeto local (do seu pc)
-
-Antes de começar a codar, sempre atualize a versão do seu computador dando o comando:
-
-```bash
-git pull origin main
-```
-
-Por que?
-Evita conflitos de arquivo e garante que você está mexendo na versão mais atualizada do site.
+Este projeto está licenciado sob a [Licença MIT](LICENSE).
