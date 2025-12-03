@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // ANIMAÇÕES GSAP — Entrada elegante da seção hero
 
   gsap.from(".hero-titulo", {
+    //Definindo o que O GSAP vai fazer no título do hero
     duration: 1.2,
     y: -40,
     opacity: 0,

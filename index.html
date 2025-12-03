@@ -508,21 +508,144 @@
         <div class="container grid">
           <div class="card">
             <h2>Trechos de código essenciais</h2>
-            <pre><code><span class="c-green">// Explique aqui esse trecho do código</span>
-#include &lt;FastLED.h&gt;
-#define NUM_LEDS 8
-#define DATA_PIN 6
-CRGB leds[NUM_LEDS];
+            <pre><code><span class="c-green">// Frequências usadas na melodia //Forma padrão em projetos Arduino com som
+            </span>
+// Definições das notas musicais
+# define NOTE_C3  131
+# define NOTE_CS3 139
+# define NOTE_D3  147
+# define NOTE_DS3 156
+# define NOTE_E3  165
+# define NOTE_F3  175
+# define NOTE_FS3 185
+# define NOTE_G3  196
+# define NOTE_GS3 208
+# define NOTE_A3  220
+# define NOTE_AS3 233
+# define NOTE_B3  247
+# define NOTE_C4  262
+# define NOTE_CS4 277
+# define NOTE_D4  294
+# define NOTE_DS4 311
+# define NOTE_E4  330
+# define NOTE_F4  349
+# define NOTE_FS4 370
+# define NOTE_G4  392
+# define NOTE_GS4 415
+# define NOTE_A4  440
+# define NOTE_AS4 466
+# define NOTE_B4  494
+// Melodia de comemoração
+int melody[] = {
+  NOTE_CS3, NOTE_C3, NOTE_CS3, NOTE_C3, NOTE_CS3, NOTE_DS3, NOTE_CS3,
+  NOTE_FS4, NOTE_FS4, NOTE_FS4, NOTE_GS4, NOTE_F4, NOTE_FS4, NOTE_GS4,
+  NOTE_B4, NOTE_AS4, NOTE_B4, NOTE_AS4, NOTE_B4, NOTE_CS3, NOTE_B4,
+  NOTE_GS4, NOTE_GS4, NOTE_GS4, NOTE_AS4, NOTE_FS4, NOTE_GS4, NOTE_AS4,
+  NOTE_CS3, NOTE_C3, NOTE_CS3, NOTE_C3, NOTE_CS3, NOTE_DS3, NOTE_CS3, NOTE_B4, NOTE_AS4, NOTE_GS4, NOTE_FS4, NOTE_E4, NOTE_DS4, NOTE_CS4, NOTE_B4,
+  NOTE_DS4, NOTE_DS4, NOTE_B4, NOTE_AS4, NOTE_GS4, NOTE_GS4, NOTE_FS4, NOTE_CS4, NOTE_FS4, NOTE_FS4, NOTE_F4, NOTE_DS4, NOTE_F4, NOTE_FS4
+};
+const uint8_t durations[] = {
+  1,1,1,1,1,1,2,
+  1,1,1,1,1,1,2,
+  1,1,1,1,1,1,2,
+  1,1,1,1,1,1,2,
+  1,1,1,1,1,1,1, 1,1,1,1,1,1,1,2,
+  1,1,1,1,1,1,1,1,1,1,1,1,1,2
+};
 
-<span class="c-green">// Explique aqui esse trecho do código</span>
+<span class="c-green">// Inicializa LCD, LEDs, botões, sorteio e buzzer
+  // Mostra tela inicial FrevoPlay OFF
+</span>
+/* SETUP */
 void setup() {
-  FastLED.addLeds&lt;WS2812, DATA_PIN, GRB&gt;(leds, NUM_LEDS);
+  Serial.begin(9600);
+  Serial.println("=== FrevoPlay Iniciando ===");
+
+  // Inicializa LCD I2C
+  lcd.init();
+  lcd.backlight();  // Liga a luz de fundo
+
+  Serial.println("LCD I2C inicializado!");
+
+  // LEDs como saída
+  for (int i = 0; i <= 3; i++) {
+    pinMode(pinosLeds[i], OUTPUT);
+    digitalWrite(pinosLeds[i], LOW);
+  }
+
+  // Botões do jogo como entrada (com pull-down externo, se montado assim)
+  for (int i = 0; i <= 3; i++) {
+    pinMode(pinosBotoes[i], INPUT);
+    // Se quiser usar INPUT_PULLUP para eles também, mude aqui e ajuste a lógica
+  }
+
+  // Botão POWER com pull-up interno (ligar/desligar sistema)
+  pinMode(botaoPower, INPUT_PULLUP);
+
+  // Buzzer como saída
+  pinMode(pinoAudio, OUTPUT);
+  noTone(pinoAudio);
+
+  // Semente aleatória
+  randomSeed(analogRead(0));
+
+  // Tela inicial: sistema desligado
+  lcd.clear();
+  lcd.setCursor(0, 0);
+  lcd.print("FrevoPlay OFF");
+  lcd.setCursor(0, 1);
+  lcd.print("Press power");
 }
 
-<span class="c-green">// Explique aqui esse trecho do código</span>
+<span class="c-green">// Responsável por todo o ciclo do jogo
+  //Controle de quando o jogador erra, acerta, avança...
+</span>
+/* LOOP PRINCIPAL */
 void loop() {
-  for (int i=0; i&lt;NUM_LEDS; i++) { leds[i] = CRGB::Yellow; FastLED.show(); delay(120); leds[i] = CRGB::Black; }
+  // Verifica se o botao de power foi apertado
+  checarPower();
+
+  // Se o sistema estiver desligado, não roda o jogo
+  if (!sistemaLigado) {
+    return;
+  }
+
+  // Se o jogador errou, trata o fim de jogo
+  if (game_over) {
+    // Calcula pontuação: quantas rodadas completas foram feitas
+    if (RodadaAtual > 0) {
+      pontuacao = RodadaAtual - 1;
+    } else {
+      pontuacao = 0;
+    }
+
+    // Mostra pontos e recorde no LCD + toca música conforme regra
+    mostrarPontuacaoFinal();
+
+    // Reseta jogo
+    RodadaAtual = 0;
+    passo_atual_na_sequencia = 0;
+    game_over = false;
+
+    // Volta para a tela inicial do jogo (não desliga, apenas reseta)
+    delay(2000);
+    mostrarTelaInicio();
+  }
+
+  // Primeira vez da rodada: som de início
+  if (RodadaAtual == 0) {
+    Iniciandotom();
+    delay(500);
+  }
+
+  // Jogo em si
+  Rodadaseguinte();       // adiciona novo passo
+  reproduzirSequencia();  // mostra sequência
+  aguardandoPlayer();     // espera o jogador repetir
+
+  delay(1000);
 }
+
 </code></pre>
 
             <p>
